@@ -1,0 +1,55 @@
+<!-- banner -->
+<div class="banner">
+  <div class="fill"></div>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#00cba9" fill-opacity="1"
+      d="M0,192L60,213.3C120,235,240,277,360,261.3C480,245,600,171,720,122.7C840,75,960,53,1080,85.3C1200,117,1320,203,1380,245.3L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+    </path>
+  </svg>
+</div>
+
+<!-- Login content -->
+<div class="login-page">
+  <div class="info">
+    <h2>Unete a nuestra comunidad de Artistas y amantes de la buena música <span>🤩🤟</span></h2>
+    <div class="info-text">
+      
+      <p>
+        <span>LowBeat</span> es una pagina donde todos nuestros usuarios pueden subir su música propia de forma gratuita.
+      </p>
+      <p>
+        Facilmente podras tener un perfil de artista y darte a conocer dentro de nuestra comunidad que constantemente esta apoyando a nuevos artistas independientes
+      </p>
+    </div>
+  </div>
+  <div class="form-login">
+    <h3>Ingresa 👇</h3>
+    <form (ngSubmit)="sendLogin()" [formGroup]="form" class="form">
+      <div class="form-control">
+        <label for="email">Email</label>
+        <input formControlName="email" type="text" placeholder="ejemplo@ejemplo.com">
+      </div>
+
+      <div class="form-control">
+        <label for="password">Contraseña</label>
+        <input formControlName="password" type="password">
+      </div>
+
+      <div class="register-text">
+        <p><a routerLink="/auth/register" >¿Aún no tines cuenta? ¡Registrate!</a></p>
+        <p><a href="">¿Olvidaste tu contraseña?</a></p>
+      </div>
+
+      <div *ngIf="errorRegister" class="error">
+        {{ message?.message || message}}
+      </div>
+      <div *ngIf="okRegister" class="ok">
+        {{ message?.message }}
+      </div>
+
+      <div class="button-submit">
+        <button  type="submit">Entrar</button>
+      </div>
+    </form>
+  </div>
+</div>

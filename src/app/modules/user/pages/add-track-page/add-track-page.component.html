@@ -1,0 +1,38 @@
+<div class="add-track-page">
+  <div class="form-track">
+    <h2>Sube tus canciones y comienza a compartirlas 🎧 💃</h2>
+    <form (ngSubmit)="send()" [formGroup]="form" class="form">
+
+      <h3>Datos de la cancion</h3>
+      <div class="form-control">
+        <label for="name">Nombre de la cancion</label>
+        <input formControlName="trackName" type="text">
+      </div>
+
+      <div class="form-control">
+        <label for="album">Album</label>
+        <input formControlName="trackAlbum" type="text">
+      </div>
+
+      <div class="form-control">
+        <label for="genre">Genero</label>
+        <input formControlName="trackGenre" type="text">
+      </div>
+
+      <div class="form-control">
+        <label for="coverFile">Imagen cover de la cancion</label>
+        <input (change)="saveFileImg($event)" formControlName="fileCover" accept=".png, .jpg, .jpeg" type="file">
+      </div>
+
+      <div class="form-control">
+        <label for="audioFile">Archivo de audio de la cancion</label>
+        <input (change)="saveFileMp3($event)" formControlName="fileTrack" accept="audio/mpeg" type="file">
+      </div>
+
+      <div class="button-submit">
+        <button [disabled]="form.invalid" type="submit">Enviar</button>
+      </div>
+      
+    </form>
+  </div>
+</div>

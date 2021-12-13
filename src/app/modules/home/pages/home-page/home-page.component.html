@@ -1,0 +1,10 @@
+<div class="container">
+  <app-sidebar [toggle]="toggle"></app-sidebar>
+  <div #main [ngClass]="toggle ? 'active' : ''" class="main">
+    <app-navbar (onNuevoToggle)="toggleNav( $event )"></app-navbar>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <app-audio-player></app-audio-player>
+</div>

@@ -1,0 +1,72 @@
+.add-track-page {
+  width: 100%;
+  height: 100%;
+}
+
+.form-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-track h2 {
+  font-size: 2em;
+  color: rgb(199, 67, 192);
+}
+
+.form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form h3 {
+  font-size: 1.6em;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control label {
+  font-size: 1.4em;
+}
+
+.form-control input[type="text"] {
+  width: 100%;
+  height: 40px;
+  font-size: 1.4em;
+  border: 1px solid rgb(63, 63, 63);
+  border-radius: 5px;
+  padding: 0 15px;
+  outline: none;
+  transition: border 100ms;
+}
+
+.form-control input[type="file"] {
+  height: 40px;
+  font-size: 1.4em;
+  padding: 0 15px;
+}
+
+.form-control input[type="text"]:focus {
+  border: 3px solid rgb(0, 225, 255);
+}
+
+.button-submit {
+  margin-top: 30px;
+}
+
+.button-submit button {
+  width: 100%;
+  height: 40px;
+  font-size: 1.4em;
+  font-family: inherit;
+  background-color: rgb(115, 252, 149);
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid rgb(28, 177, 40);
+  cursor: pointer;
+}

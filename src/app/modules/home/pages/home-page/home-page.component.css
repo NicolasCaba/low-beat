@@ -1,0 +1,33 @@
+.main {
+  position: absolute;
+  left: 280px;
+  width: calc(100% - 280px);
+  min-height: 100vh;
+  background: var(--color-terciario);
+  transition: 0.5s;
+  padding-bottom: 120px;
+}
+
+.main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.content {
+  margin: 15px 30px;
+}
+
+@media (max-width: 991px) {
+  .main {
+    width: 100%;
+    left: 0;
+  }
+
+  .main.active {
+    left: 280px
+  }
+
+  .content {
+    margin: 5px 10px;
+  }
+}

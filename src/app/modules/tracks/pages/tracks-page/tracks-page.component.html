@@ -1,0 +1,13 @@
+<div class="top-tracks">
+  <h2>Canciones que estan en el TOP Mundial</h2>
+  <div class="cards-container">
+    <div *ngFor="let track of tracksData" class="card">
+      <img [src]="track.coverImg" alt="cover song image">
+      <div class="card-text">
+        <div class="card-title">{{ track.name }}</div>
+        <div class="card-subtitle">{{ track.artist.nickname }}</div>
+      </div>
+      <i class="uil uil-play-circle card-button"></i>
+    </div>
+  </div>
+</div>

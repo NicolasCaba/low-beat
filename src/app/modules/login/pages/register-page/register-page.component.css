@@ -1,0 +1,156 @@
+.background {
+  position: absolute;
+  background: var(--color-primario);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.banner {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+
+}
+
+.fill {
+  width: 100%;
+  height: 100px;
+  background: #fff;
+  padding: 0;
+  margin: 0
+}
+
+svg {
+  padding: 0;
+  margin: 0
+}
+
+
+.register-form {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 30;
+}
+
+.register-form h2 {
+  font-size: 2.2em;
+  color: rgb(50, 143, 250);
+  text-align: center;
+}
+
+.form {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-control label {
+  font-size: 1.4em;
+  color: var(--color-blanco);
+}
+
+.form-control input {
+  width: 100%;
+  height: 40px;
+  font-size: 1.4em;
+  border: 1px solid rgb(63, 63, 63);
+  border-radius: 5px;
+  padding: 0 15px;
+  outline: none;
+  transition: border 100ms;
+  background-color: rgb(54, 54, 54);
+  color: var(--color-blanco);
+}
+
+.form-control input:focus {
+  border: 2px solid rgb(0, 225, 255);
+}
+
+.register-text {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.register-text p {
+  margin: 0;
+}
+
+.register-text p a {
+  color: rgb(16, 116, 231);
+}
+
+
+.button-submit {
+  margin-top: 30px;
+}
+
+.button-submit button {
+  width: 100%;
+  height: 40px;
+  font-size: 1.4em;
+  font-family: inherit;
+  background-color: rgb(115, 252, 149);
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid rgb(28, 177, 40);
+  cursor: pointer;
+}
+
+.button-submit button:disabled {
+  background-color: rgb(163, 255, 186);
+}
+
+.error {
+  width: 100%;
+  height: 40px;
+  font-size: 1.2em;
+  font-family: inherit;
+  background-color: rgb(255, 94, 66);
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid rgb(192, 41, 14);
+  color: white;
+  text-align: center;
+}
+
+.ok {
+  width: 100%;
+  height: 40px;
+  font-size: 1.2em;
+  font-family: inherit;
+  background-color: rgb(9, 108, 255);
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid rgb(14, 70, 192);
+  color: white;
+  text-align: center;
+}
+
+@media (max-width: 1520px) {
+  .form {
+    width: 60%;
+  }
+}
+@media (max-width: 1000px) {
+  .form {
+    width: 80%;
+  }
+}
+@media (max-width: 480px) {
+  .form {
+    width: 90%;
+  }
+
+  .register-form h2 {
+    font-size: 2em;
+  }
+}
