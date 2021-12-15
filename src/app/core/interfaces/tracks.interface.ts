@@ -1,6 +1,6 @@
 export interface TrackInterface {
   artist:   Artist;
-  duration: Duration;
+  duration?: Duration;
   name:     string;
   album:    string;
   coverImg: string;
@@ -11,7 +11,7 @@ export interface TrackInterface {
 export interface Artist {
   name:        string;
   nickname:    string;
-  nationality: string;
+  nationality?: string;
 }
 
 export interface Duration {

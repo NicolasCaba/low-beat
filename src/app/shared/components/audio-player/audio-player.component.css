@@ -86,7 +86,6 @@
 }
 
 .progress-bar-dinamic {
-  width: 50%;
   height: 5px;
   border-radius: 5px;
   background-color: var(--color-secundario);

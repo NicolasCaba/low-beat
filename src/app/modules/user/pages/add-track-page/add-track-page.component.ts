@@ -19,6 +19,9 @@ export class AddTrackPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
+      artistName: new FormControl('', [
+        Validators.required
+      ]),
       trackName: new FormControl('', [
         Validators.required
       ]),
@@ -52,6 +55,7 @@ export class AddTrackPageComponent implements OnInit {
 
       const formData = new FormData();
       formData.append('artistId', cookie);
+      formData.append('artistNickname', this.form.value.artistName);
       formData.append('name', this.form.value.trackName);
       formData.append('album', this.form.value.trackAlbum);
       formData.append('genre', this.form.value.trackGenre);

@@ -1,14 +1,14 @@
 <div class="audio-player">
   <!-- Tracks information -->
   <div class="track-info">
-    <div class="img-text">
-      <img src="https://direct.rhapsody.com/imageserver/images/alb.455061986/600x600.jpg" alt="" class="cover-img">
+    <div *ngIf="audioService.trackData$ | async as track" class="img-text">
+      <img [src]="track.coverImg" class="cover-img">
       <div class="track-text">
         <div class="track-name">
-          Nombre Cancion
+          {{ track.name }}
         </div>
         <div class="artist-name">
-          Nombre Artista
+          {{ track.artistNickname }}
         </div>
       </div>
     </div>
@@ -20,20 +20,23 @@
       <div class="step-left">
         <i class="uil uil-previous"></i>
       </div>
-      <div class="button-play">
-        <i class="uil uil-play-circle"></i>
+      <div (click)="audioService.togglePlayer()" class="button-play">
+        <i [ngClass]="{
+          'uil-play-circle': state === 'paused',
+          'uil-pause-circle': state !== 'paused'
+        }" class="uil"></i>
       </div>
       <div class="step-right">
         <i class="uil uil-step-forward"></i>
       </div>
     </div>
     <div class="progress-bar-content">
-      <span class="progress-bar-static">
-        <span class="progress-bar-dinamic"></span>
+      <span #progressBar (click)="handlePosition($event)" class="progress-bar-static">
+        <span [style.width]="(audioService.playerPercentage$ | async)+'%'" class="progress-bar-dinamic"></span>
       </span>
       <div class="time-display">
-        <div class="current-time">00</div>
-        <div class="duration">99</div>
+        <div class="current-time">{{ audioService.timeElapsed$ | async }}</div>
+        <div class="duration">{{ audioService.timeRemaining$ | async }}</div>
       </div>
     </div>
   </div>

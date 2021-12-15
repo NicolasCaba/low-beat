@@ -2,6 +2,11 @@
   <div class="form-track">
     <h2>Sube tus canciones y comienza a compartirlas 🎧 💃</h2>
     <form (ngSubmit)="send()" [formGroup]="form" class="form">
+      <h3>Datos del artista</h3>
+      <div class="form-control">
+        <label for="artist-name">Nombre del Artista</label>
+        <input formControlName="artistName" type="text">
+      </div>
 
       <h3>Datos de la cancion</h3>
       <div class="form-control">

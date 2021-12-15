@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { TracksService } from '@shared/services/tracks-service/tracks.service';
-
-import { TrackInterface } from '@core/interfaces/tracks.interface';
+import { AudioService } from '../../../../shared/services/audio-service/audio.service';
 
 @Component({
   selector: 'app-tracks-page',
@@ -11,7 +10,7 @@ import { TrackInterface } from '@core/interfaces/tracks.interface';
 })
 export class TracksPageComponent implements OnInit {
 
-  tracksData: TrackInterface[] = [];
+  tracksData: any[] = [];
   getTracks(): void {
     this.tracksService.getAllTracks()
       .subscribe(data => {
@@ -19,10 +18,14 @@ export class TracksPageComponent implements OnInit {
       });
   }
 
-  constructor( private tracksService: TracksService ) { }
+  constructor( private tracksService: TracksService, private audioService: AudioService ) { }
 
   ngOnInit(): void {
     this.getTracks();
+  }
+
+  sendTrack(track: any) {
+    this.audioService.trackData$.next(track);
   }
 
 }
