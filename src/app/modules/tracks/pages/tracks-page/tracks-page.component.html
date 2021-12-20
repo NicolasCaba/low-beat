@@ -7,6 +7,20 @@
         <div class="card-title">{{ track.name }}</div>
         <div class="card-subtitle">{{ track.artistNickname }}</div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="alltracks">
+  <h2>Top de este mes</h2>
+  <div class="cards-container2">
+    <div (click)="sendTrack(track)" *ngFor="let track of tracksData" class="card2">
+      <img [src]="track.coverImg" alt="cover song image">
+      <div class="card-text2">
+        <div class="card-title2">{{ track.name }}</div>
+        <div class="card-subtitle2">{{ track.artistNickname }}</div>
+        <div class="card-subtitle2">{{ track.album }}</div>
+      </div>
       <i class="uil uil-play-circle card-button"></i>
     </div>
   </div>

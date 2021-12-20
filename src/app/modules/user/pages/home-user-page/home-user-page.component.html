@@ -1,4 +1,27 @@
-<h1>Datos de usuario</h1>
-<p></p>
+<div class="home-user-page">
+  <div class="user-data">
+    <h2>{{ userData.nickname }}</h2>
+    <p class="user-nationality">
+      {{ userData.nationality }}
+    </p>
+  </div>
+  <div class="tracks-admin">
+    <a routerLink="/user/update-delete" class="btn">Administrar canciones</a> 
+  </div>
+  <div class="user-tracks">
+    <div class="cards-container">
+      <div (click)="sendTrack(track)" *ngFor="let track of userTracks" class="card">
+        <img [src]="track.coverImg" alt="cover song image">
+        <div class="card-text">
+          <div class="card-title">{{ track.name }}</div>
+          <div class="card-subtitle">{{ track.artistNickname }}</div>
+          <div class="card-subtitle">{{ track.album }}</div>
+        </div>
+        <i class="uil uil-play-circle card-button"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 

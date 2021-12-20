@@ -1,1 +1,13 @@
-<p>tracks-list-page works!</p>
+<div class="cards-container">
+  <div *ngFor="let track of userTracks" class="card">
+    <img [src]="track.coverImg" alt="cover song image">
+    <div (click)="sendTrack(track)" class="card-text">
+      <div class="card-title">{{ track.name }}</div>
+      <div class="card-subtitle">{{ track.artistNickname }}</div>
+    </div>
+    <div class="icons">
+      <i (click)="editTrack(track)" class="uil uil-edit"></i>
+      <i (click)="deleteTrack(track)" class="uil uil-trash-alt"></i>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 25px;
+  row-gap: 25px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 80px;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 10px 10px 16px rgb(209, 209, 209);
+  transition: 200ms;
+  border-radius: 5px;
+}
+
+.card:hover {
+  box-shadow: 16px 16px 10px rgb(209, 209, 209);
+  cursor: pointer;
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding-left: 15px;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+
+
+.icons {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+i {
+  height: 40px;
+}
+
+i.uil-edit {
+ font-size: 1.8em;
+}
+
+i.uil-trash-alt {
+  font-size: 2em;
+}
+
+i.uil-edit::before {
+  background-color: rgb(64, 104, 238);
+  border-radius: 5px;
+}
+
+i.uil-trash-alt::before {
+  background-color: rgb(238, 76, 64);
+  border-radius: 5px;
+}
+
+@media (max-width: 1555px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 1300px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 650px) {
+  .cards-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

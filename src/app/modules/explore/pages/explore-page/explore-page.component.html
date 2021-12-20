@@ -1,0 +1,30 @@
+<div class="explore-page">
+  <div class="cards-container">
+    <div class="container-card1">
+      <div (click)="viewCategorie(item)" *ngFor="let item of exploreCategories1" class="card1">
+        <img [src]="item.imgUrl" alt="music image" class="card-image">
+        <div class="card-text">
+          <h2>{{ item.title }}</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-card2">
+      <div (click)="viewCategorie(item)" *ngFor="let item of exploreCategories2" class="card2">
+        <img [src]="item.imgUrl" alt="music image" class="card-image">
+        <div class="card-text">
+          <h2>{{ item.title }}</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-card3">
+      <div (click)="viewCategorie(item)" *ngFor="let item of exploreCategories3" class="card3">
+        <img [src]="item.imgUrl" alt="music image" class="card-image">
+        <div class="card-text">
+          <h2>{{ item.title }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

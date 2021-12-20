@@ -1,6 +1,7 @@
-.add-track-page {
+.edit-track-page {
   width: 100%;
   height: 100%;
+  padding-bottom: 50px ;
 }
 
 .form-track {
@@ -70,6 +71,11 @@
   border-radius: 5px;
   border: 2px solid rgb(28, 177, 40);
   cursor: pointer;
+}
+
+.options {
+  font-size: 1.2em;
+  text-align: center;
 }
 
 .error {

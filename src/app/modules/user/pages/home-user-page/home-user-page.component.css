@@ -1,0 +1,93 @@
+.user-data {
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--color-primario);
+  text-align: center;
+}
+
+.user-data h2 {
+  font-size: 2.6em;
+  margin: 20px 0 0 0;
+}
+
+.user-nationality {
+  font-size: 1.6em;
+  margin: 0;
+}
+
+.tracks-admin {
+  text-align:right;
+  margin: 0  0 10px 0;
+}
+
+.btn {
+  background-color: rgb(103, 255, 136);
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(36, 36, 36);
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 10px 10px 16px rgb(209, 209, 209);
+  transition: box-shadow 300ms;
+}
+
+.card:hover {
+  box-shadow: 16px 16px 10px rgb(209, 209, 209);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card-text {
+  color: var(--color-blanco);
+  width: 100%;
+  padding: 8px 8px;
+}
+
+.card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+i {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 2.4em;
+  color: rgb(115, 243, 104);
+}
+
+@media (max-width: 1400px) {
+  .cards-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media (max-width: 1200px) {
+  .cards-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 775px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 570px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

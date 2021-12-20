@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: () => import(`../user/user.module`).then(m => m.UserModule)
   },
   {
+    path: 'explore',
+    loadChildren: () => import(`../explore/explore.module`).then(m => m.ExploreModule)
+  },
+  {
     path: '**',
     redirectTo: '/tracks'
   }

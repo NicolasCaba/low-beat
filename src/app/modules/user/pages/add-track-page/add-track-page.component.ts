@@ -15,6 +15,10 @@ export class AddTrackPageComponent implements OnInit {
   fileImg: any = '';
   fileMp3: any = '';
 
+  errorCreate: boolean = false;
+  okCreate: boolean = false;
+  message: any = '';
+
   constructor( private userService: UserService ,private cookierService: CookieService) { }
 
   ngOnInit(): void {
@@ -64,12 +68,18 @@ export class AddTrackPageComponent implements OnInit {
 
       this.userService.createTrack(formData)
         .subscribe((response) => {
-          console.log(response);
+          this.okCreate = true;
+          this.message = response.message;
+          this.errorCreate = false;
         }, (error) => {
           console.log(error);
+          this.errorCreate = true;
+          this.message = error;
         })
     } catch (error) {
       console.log(error);
+      this.errorCreate = true;
+      this.message = error;
     }
   }
 

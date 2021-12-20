@@ -1,27 +1,27 @@
-<div class="add-track-page">
+<div class="edit-track-page">
   <div class="form-track">
-    <h2>Sube tus canciones y comienza a compartirlas 🎧 💃</h2>
+    <h2>Edicion de la cancion</h2>
     <form (ngSubmit)="send()" [formGroup]="form" class="form">
       <h3>Datos del artista</h3>
       <div class="form-control">
         <label for="artist-name">Nombre del Artista</label>
-        <input formControlName="artistName" type="text">
+        <input formControlName="artistName" type="text" [value]="artistNickname">
       </div>
 
       <h3>Datos de la cancion</h3>
       <div class="form-control">
         <label for="name">Nombre de la cancion</label>
-        <input formControlName="trackName" type="text">
+        <input formControlName="trackName" type="text" [value]="trackName">
       </div>
 
       <div class="form-control">
         <label for="album">Album</label>
-        <input formControlName="trackAlbum" type="text">
+        <input formControlName="trackAlbum" type="text" [value]="trackAlbum">
       </div>
 
       <div class="form-control">
         <label for="genre">Genero</label>
-        <input formControlName="trackGenre" type="text">
+        <input formControlName="trackGenre" type="text"  [value]="trackGenre">
       </div>
 
       <div class="form-control">
@@ -34,15 +34,19 @@
         <input (change)="saveFileMp3($event)" formControlName="fileTrack" accept="audio/mpeg" type="file">
       </div>
 
-      <div *ngIf="errorCreate" class="error">
+      <div *ngIf="errorUpdate" class="error">
         {{ message }}
       </div>
-      <div *ngIf="okCreate" class="ok">
+      <div *ngIf="okUpdate" class="ok">
         {{ message }}
       </div>
 
       <div class="button-submit">
         <button [disabled]="form.invalid" type="submit">Enviar</button>
+      </div>
+
+      <div class="options">
+        <a routerLink="/user/update-delete">Volver</a>
       </div>
       
     </form>
